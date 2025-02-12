@@ -1,17 +1,11 @@
 {
-    "controller": "pl-sqlite.py",
-    "dependencies": {
-        "elementScripts": [
-            "pl-sqlite.js",
-            "clientFilesElement/sqlite3.js"
-        ],
-        "nodeModulesScripts": [
-            "ace-builds/src-min-noconflict/ace.js",
-            "ace-builds/src-min-noconflict/ext-themelist.js",
-            "ace-builds/src-min-noconflict/ext-language_tools.js"
-        ],
-        "elementStyles": [
-            "pl-sqlite.css"
-        ]
-    }
+  "controller": "pl-sqlite.py",
+  "dependencies": {
+    "elementScripts": ["pl-sqlite.js", "clientFilesElement/sqlite3.js"],
+    "nodeModulesScripts": [
+      "ace-builds/src-min-noconflict/ace.js",
+      "ace-builds/src-min-noconflict/ext-themelist.js",
+      "ace-builds/src-min-noconflict/ext-language_tools.js"
+    ]
+  }
 }

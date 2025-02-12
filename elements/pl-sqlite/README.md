@@ -78,3 +78,5 @@ Airplane emoji
 &#9992;&#65039;
 
 pragma foreign_key_list('TableName');
+
+Whitespace parser for queries to handle from HTML indentation, prettier?

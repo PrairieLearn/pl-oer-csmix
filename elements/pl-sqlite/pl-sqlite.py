@@ -1,6 +1,4 @@
-import json
 import os
-from pprint import pprint
 
 import chevron
 import lxml.html
@@ -127,9 +125,21 @@ def render(element_html, data):
 
         with open("sandbox.mustache", "r", encoding="utf-8") as f:
             try:
-                sandbox = lxml.html.fromstring(chevron.render(f, html_params))
-                sandbox.tail = child.tail
-                child.getparent().replace(child, sandbox)
+                # sandbox = lxml.html.fragment_fromstring(chevron.render(f, html_params))
+                # sandbox.tail = child.tail
+                # child.getparent().replace(child, sandbox)
+
+                sandboxtags = lxml.html.fragments_fromstring(
+                    chevron.render(f, html_params)
+                )
+
+                parent = child.getparent()
+                index = parent.index(child)
+
+                parent.remove(child)
+                for i, fragment in enumerate(sandboxtags):
+                    parent.insert(index + i, fragment)
+
             except lxml.etree.ParserError:
                 # Empty string so don't include anything
                 child.drop_tree()
@@ -167,9 +177,17 @@ def render(element_html, data):
 
         with open("query.mustache", "r", encoding="utf-8") as f:
             try:
-                query = lxml.html.fromstring(chevron.render(f, html_params))
-                query.tail = child.tail
-                child.getparent().replace(child, query)
+                querytags = lxml.html.fragments_fromstring(
+                    chevron.render(f, html_params)
+                )
+
+                parent = child.getparent()
+                index = parent.index(child)
+                parent.remove(child)
+
+                for i, fragment in enumerate(querytags):
+                    parent.insert(index + i, fragment)
+
             except lxml.etree.ParserError:
                 # Empty string don't include anything
                 child.drop_tree()
@@ -191,7 +209,10 @@ def render(element_html, data):
             if pl.has_attrib(element, "foreign_keys"):
                 html_params["foreign_keys"] = True
 
-            initialize = lxml.html.fromstring(chevron.render(f, html_params).strip())
+            # Single tag so fragment_fromtstring works
+            initialize = lxml.html.fragment_fromstring(
+                chevron.render(f, html_params).strip()
+            )
             # index 0 just after the root
             element.insert(0, initialize)
 

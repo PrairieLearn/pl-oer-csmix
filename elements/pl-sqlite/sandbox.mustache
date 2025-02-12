@@ -46,7 +46,7 @@
 
 {{#sandbox}}
 <p>
-<button type="button" class="btn btn-md" style="background-color:orange;"
+<button type="button" class="btn btn-md btn-warning"
 id="sandbox-runit-{{ uuid }}"
 onclick="
     runsql({sql: document.getElementById('sandbox-input-{{ uuid }}').value,
@@ -74,6 +74,7 @@ onclick="
     sandboxEditors['{{ uuid }}'].setTheme("ace/theme/sqlserver");
     sandboxEditors['{{ uuid }}'].session.setMode("ace/mode/sql");
     sandboxEditors['{{ uuid }}'].setOptions({
+        enableKeyboardAccessibility: true,
         autoScrollEditorIntoView: true,
         minLines: 6,
         maxLines: 200,
@@ -113,6 +114,7 @@ onclick="
 </script>
 
 {{#submission}}
+<pl-external-grader-results></pl-external-grader-results>
 {{/submission}}
 {{/answer}}
 
