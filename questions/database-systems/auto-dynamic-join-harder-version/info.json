@@ -6,5 +6,6 @@
         "author:alawini@illinois.edu"
     ],
     "topic": "Database Systems",
-    "type": "v3"
+    "type": "v3",
+    "sharedPublicly": true
 }

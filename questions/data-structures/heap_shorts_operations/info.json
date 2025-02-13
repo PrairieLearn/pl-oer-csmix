@@ -1,8 +1,12 @@
 {
-  "uuid": "3807f7de-8299-11ea-ab1b-5b2d1f68cc31",
-  "title": "Heap shorts operations",
-  "topic": "Data Structures",
-  "tags": ["author:cheeren@cs.ubc.ca", "Heaps"],
-  "type": "v3",
-    "showCorrectAnswer": false
+    "uuid": "3807f7de-8299-11ea-ab1b-5b2d1f68cc31",
+    "title": "Heap shorts operations",
+    "topic": "Data Structures",
+    "tags": [
+        "author:cheeren@cs.ubc.ca",
+        "Heaps"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false,
+    "sharedPublicly": true
 }

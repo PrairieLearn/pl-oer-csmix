@@ -6,5 +6,6 @@
         "markov",
         "author:cheeren@cs.ubc.ca"
     ],
-    "type": "v3"
+    "type": "v3",
+    "sharedPublicly": true
 }

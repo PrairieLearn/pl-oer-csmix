@@ -1,8 +1,12 @@
 {
-  "uuid": "0bbf7056-80d4-11ea-baff-bf17e9ab60a0",
-  "title": "Minimum spanning tree",
-  "topic": "Data Structures",
-  "tags": ["author:cheeren@cs.ubc.ca","Graphs"],
-  "showCorrectAnswer": false,
-  "type": "v3"
+    "uuid": "0bbf7056-80d4-11ea-baff-bf17e9ab60a0",
+    "title": "Minimum spanning tree",
+    "topic": "Data Structures",
+    "tags": [
+        "author:cheeren@cs.ubc.ca",
+        "Graphs"
+    ],
+    "showCorrectAnswer": false,
+    "type": "v3",
+    "sharedPublicly": true
 }

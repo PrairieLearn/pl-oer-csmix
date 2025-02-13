@@ -2,7 +2,8 @@
     "uuid": "a6760291-f0da-4a8a-be07-737d34f415dc",
     "title": "Image processing",
     "topic": "Numerical Methods",
-    "tags": ["Linear System of Equations"
+    "tags": [
+        "Linear System of Equations"
     ],
     "type": "v3",
     "singleVariant": true,
@@ -12,5 +13,6 @@
         "image": "prairielearn/grader-python",
         "entrypoint": "/python_autograder/run.sh",
         "timeout": 60
-    }
+    },
+    "sharedPublicly": true
 }

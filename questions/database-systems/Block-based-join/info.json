@@ -2,7 +2,10 @@
     "uuid": "14f1e9d8-60a9-461e-a252-d98578b612f0",
     "title": "Block-based Nested Loop Join",
     "topic": "Database Systems",
-    "tags": ["Query Processing",
-    "author:alawini@illinois.edu"],
-    "type": "v3"
+    "tags": [
+        "Query Processing",
+        "author:alawini@illinois.edu"
+    ],
+    "type": "v3",
+    "sharedPublicly": true
 }

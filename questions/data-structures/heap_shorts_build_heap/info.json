@@ -1,7 +1,11 @@
 {
-  "uuid": "ebab4d70-829b-11ea-adca-9fbbb0e873e6",
-  "title": "Heap shorts build heap",
-  "topic": "Data Structures",
-  "tags": ["author:cheeren@cs.ubc.ca", "Heaps"],
-  "type": "v3"
+    "uuid": "ebab4d70-829b-11ea-adca-9fbbb0e873e6",
+    "title": "Heap shorts build heap",
+    "topic": "Data Structures",
+    "tags": [
+        "author:cheeren@cs.ubc.ca",
+        "Heaps"
+    ],
+    "type": "v3",
+    "sharedPublicly": true
 }

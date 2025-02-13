@@ -7,5 +7,6 @@
         "Control/Datapath",
         "Processor",
         "author:glherman@illinois.edu"
-    ]
+    ],
+    "sharedPublicly": true
 }

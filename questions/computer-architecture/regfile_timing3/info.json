@@ -12,5 +12,6 @@
     "tags": [
         "Control/Datapath",
         "author:glherman@illinois.edu"
-    ]
+    ],
+    "sharedPublicly": true
 }
