@@ -8,5 +8,6 @@
         "ProofBlocks"
     ],
     "type": "v3",
-    "singleVariant": true
+    "singleVariant": true,
+    "sharedPublicly": true
 }

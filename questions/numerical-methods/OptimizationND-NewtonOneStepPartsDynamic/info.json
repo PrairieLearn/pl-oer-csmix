@@ -3,5 +3,8 @@
     "title": "N-Dimension Optimization Steps (Dynamic)",
     "topic": "Numerical Methods",
     "type": "v3",
-    "tags": ["Optimization"]
+    "tags": [
+        "Optimization"
+    ],
+    "sharedPublicly": true
 }

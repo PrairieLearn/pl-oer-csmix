@@ -9,5 +9,6 @@
     ],
     "type": "v3",
     "singleVariant": true,
-    "partialCredit": false
+    "partialCredit": false,
+    "sharedPublicly": true
 }

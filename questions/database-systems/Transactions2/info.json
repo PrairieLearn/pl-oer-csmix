@@ -17,5 +17,6 @@
         "deadlock": true,
         "downgrading": false
     },
-    "type": "v3"
+    "type": "v3",
+    "sharedPublicly": true
 }

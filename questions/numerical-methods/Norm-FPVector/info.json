@@ -2,6 +2,9 @@
     "uuid": "52f641c4-71c3-472a-be12-176ded73a184",
     "title": "Relative Vector Norm Error with Floating Point",
     "topic": "Numerical Methods",
-    "tags": ["Floating Points"],
-    "type": "v3"
+    "tags": [
+        "Floating Points"
+    ],
+    "type": "v3",
+    "sharedPublicly": true
 }

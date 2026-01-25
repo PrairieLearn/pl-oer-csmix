@@ -7,5 +7,6 @@
         "author:alawini@illinois.edu"
     ],
     "showCorrectAnswer": true,
-    "type": "v3"
+    "type": "v3",
+    "sharedPublicly": true
 }

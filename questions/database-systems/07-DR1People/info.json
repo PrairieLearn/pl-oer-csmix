@@ -19,5 +19,6 @@
             "survey.db"
         ],
         "entrypoint": "/grade/serverFilesCourse/grader1.py"
-    }
+    },
+    "sharedPublicly": true
 }

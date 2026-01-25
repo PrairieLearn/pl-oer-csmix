@@ -6,5 +6,6 @@
         "Indexing",
         "author:alawini@illinois.edu"
     ],
-    "type": "v3"
+    "type": "v3",
+    "sharedPublicly": true
 }

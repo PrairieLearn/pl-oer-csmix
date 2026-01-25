@@ -14,5 +14,6 @@
         "schedule_length": 7,
         "relation": "ABC"
     },
-    "type": "v3"
+    "type": "v3",
+    "sharedPublicly": true
 }
