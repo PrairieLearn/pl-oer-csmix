@@ -6,13 +6,5 @@
         "Transactions",
         "author:alawini@illinois.edu"
     ],
-    "options": {
-        "transactions": [
-            "read committed",
-            "read committed"
-        ],
-        "schedule_length": 7,
-        "relation": "ABC"
-    },
     "type": "v3"
 }

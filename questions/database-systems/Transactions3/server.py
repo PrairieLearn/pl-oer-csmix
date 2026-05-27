@@ -7,6 +7,8 @@ import pathlib
 import sys
 
 from cs411 import * # tada
+import json
+import os
 
 """ prairielearn code """
 
@@ -21,15 +23,19 @@ def verify(sched):
     return len(t) > 1
 
 def generate(data):
-    relation = data["options"]["relation"]
-    transactions = data["options"]["transactions"]
+    _qconfig_path = os.path.join(data["options"]["question_path"], "question_config.json")
+    with open(_qconfig_path) as _qconfig_f:
+        _qconfig = json.load(_qconfig_f)
+
+    relation = _qconfig["relation"]
+    transactions = _qconfig["transactions"]
     sched = False
     while verify(sched) == False:
-        sched = generate_schedule(relation,len(transactions),data["options"]["schedule_length"])
+        sched = generate_schedule(relation,len(transactions),_qconfig["schedule_length"])
     data["correct_answers"]["schedule"]=print_schedule(place_locks(sched,[transaction_lookup[x] for x in transactions],relation))
     data["params"]["schedule"]=print_schedule(sched)
     data["params"]["isolevels"]=" ".join([f"<li>Transaction {x+1} has isolation level {transactions[x]}.</li>" for x in range(len(transactions))])
-    data["params"]["relation"]=",".join(data["options"]["relation"])
+    data["params"]["relation"]=",".join(_qconfig["relation"])
 
 def parse(data):
     try:

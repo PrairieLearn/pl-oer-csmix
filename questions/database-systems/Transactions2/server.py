@@ -7,6 +7,8 @@ import pathlib
 import sys
 
 from cs411 import * # tada
+import json
+import os
 
 # Goals:
 # Upon generation, check for serial schedules
@@ -44,35 +46,39 @@ def check_serial(sch): # Easy enough, just check if the numbers are all in conti
                 return False
     return True
     
-def check_desirable(data, sch, sol):
+def check_desirable(data, sch, sol, _qconfig):
     data["params"]["isSerial"] = False
     data["params"]["hasDeadlock"] = False
     data["params"]["hasDowngrading"] = False
     serial = check_serial(sch)
     deadlock = check_deadlock(sol)
     downgrading = check_downgrading(sol)
-    if (serial != data["options"]["serial"]): 
+    if (serial != _qconfig["serial"]):
         return False
-    if (deadlock != data["options"]["deadlock"]):
+    if (deadlock != _qconfig["deadlock"]):
         return False
-    if (downgrading != data["options"]["downgrading"]):
+    if (downgrading != _qconfig["downgrading"]):
         return False
     return True
     
-def propose_schedule(data): # Generates a completely random schedule - no restrictions applied in this method.
-    sched = generate_schedule(data["options"]["relation"],len(data["options"]["transactions"]),data["options"]["schedule_length"])
-    sol = place_locks_and_wait(sched,[transaction_lookup[x] for x in data["options"]["transactions"]],data["options"]["relation"])
+def propose_schedule(data, _qconfig): # Generates a completely random schedule - no restrictions applied in this method.
+    sched = generate_schedule(_qconfig["relation"],len(_qconfig["transactions"]),_qconfig["schedule_length"])
+    sol = place_locks_and_wait(sched,[transaction_lookup[x] for x in _qconfig["transactions"]],_qconfig["relation"])
     return sched, sol
     
 def generate(data):
-    sched, sol = propose_schedule(data)
-    while (not check_desirable(data, sched, sol)):
-        sched, sol = propose_schedule(data)
+    _qconfig_path = os.path.join(data["options"]["question_path"], "question_config.json")
+    with open(_qconfig_path) as _qconfig_f:
+        _qconfig = json.load(_qconfig_f)
+
+    sched, sol = propose_schedule(data, _qconfig)
+    while (not check_desirable(data, sched, sol, _qconfig)):
+        sched, sol = propose_schedule(data, _qconfig)
     data["correct_answers"]["schedule"]=print_schedule(sol)
     data["params"]["schedule"]=print_schedule(sched)
-    prot = data["options"]["transactions"][1]
+    prot = _qconfig["transactions"][1]
     data["params"]["isolevels"]=" ".join([f"<li>The scheduler runs under the {prot} protocol.</li>"])
-    data["params"]["relation"]=",".join(data["options"]["relation"])
+    data["params"]["relation"]=",".join(_qconfig["relation"])
 
 def parse(data):
     try:

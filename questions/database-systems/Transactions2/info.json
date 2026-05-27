@@ -6,16 +6,5 @@
         "Transactions",
         "author:alawini@illinois.edu"
     ],
-    "options": {
-        "transactions": [
-            "Strict Two Phase Locking (S2PL)",
-            "Strict Two Phase Locking (S2PL)"
-        ],
-        "schedule_length": 8,
-        "relation": "ABC",
-        "serial": false,
-        "deadlock": true,
-        "downgrading": false
-    },
     "type": "v3"
 }

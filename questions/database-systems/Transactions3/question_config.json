@@ -1,0 +1,8 @@
+{
+    "transactions": [
+        "read committed",
+        "read committed"
+    ],
+    "schedule_length": 7,
+    "relation": "ABC"
+}
